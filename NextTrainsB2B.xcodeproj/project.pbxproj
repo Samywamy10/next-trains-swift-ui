@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04CEF994381F09DC0F0495A9 /* Pods_NextTrainsB2B.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD145F6DCFD31873E92E4FC /* Pods_NextTrainsB2B.framework */; };
-		2254583A234316F6006F16E6 /* TrainStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22545839234316F6006F16E6 /* TrainStation.swift */; };
 		2279CEF12342F95400A58065 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2279CEF02342F95400A58065 /* GoogleService-Info.plist */; };
-		2279CEF42342FA0100A58065 /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279CEF32342FA0100A58065 /* Departure.swift */; };
-		2279CEF62342FA0A00A58065 /* TrainStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279CEF52342FA0A00A58065 /* TrainStations.swift */; };
 		22F2D1372342ED820014BA53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2D1362342ED820014BA53 /* AppDelegate.swift */; };
 		22F2D1392342ED820014BA53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2D1382342ED820014BA53 /* SceneDelegate.swift */; };
 		22F2D13B2342ED820014BA53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2D13A2342ED820014BA53 /* ContentView.swift */; };
@@ -21,10 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		22545839234316F6006F16E6 /* TrainStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainStation.swift; sourceTree = "<group>"; };
 		2279CEF02342F95400A58065 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2279CEF32342FA0100A58065 /* Departure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
-		2279CEF52342FA0A00A58065 /* TrainStations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainStations.swift; sourceTree = "<group>"; };
 		22AF129023436E1400B6E378 /* NextTrainsB2B.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NextTrainsB2B.entitlements; sourceTree = "<group>"; };
 		22F2D1332342ED820014BA53 /* NextTrainsB2B.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextTrainsB2B.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F2D1362342ED820014BA53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,16 +54,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		2279CEF22342F9E300A58065 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				2279CEF32342FA0100A58065 /* Departure.swift */,
-				2279CEF52342FA0A00A58065 /* TrainStations.swift */,
-				22545839234316F6006F16E6 /* TrainStation.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		22F2D12A2342ED820014BA53 = {
 			isa = PBXGroup;
 			children = (
@@ -92,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				22AF129023436E1400B6E378 /* NextTrainsB2B.entitlements */,
-				2279CEF22342F9E300A58065 /* Data */,
 				2279CEF02342F95400A58065 /* GoogleService-Info.plist */,
 				22F2D1362342ED820014BA53 /* AppDelegate.swift */,
 				22F2D1382342ED820014BA53 /* SceneDelegate.swift */,
@@ -238,11 +221,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				22F2D1372342ED820014BA53 /* AppDelegate.swift in Sources */,
-				2279CEF62342FA0A00A58065 /* TrainStations.swift in Sources */,
 				22F2D1392342ED820014BA53 /* SceneDelegate.swift in Sources */,
-				2279CEF42342FA0100A58065 /* Departure.swift in Sources */,
 				22F2D13B2342ED820014BA53 /* ContentView.swift in Sources */,
-				2254583A234316F6006F16E6 /* TrainStation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
