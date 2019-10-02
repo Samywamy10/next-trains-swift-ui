@@ -25,6 +25,7 @@
 		2279CEF02342F95400A58065 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2279CEF32342FA0100A58065 /* Departure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
 		2279CEF52342FA0A00A58065 /* TrainStations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainStations.swift; sourceTree = "<group>"; };
+		22AF129023436E1400B6E378 /* NextTrainsB2B.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NextTrainsB2B.entitlements; sourceTree = "<group>"; };
 		22F2D1332342ED820014BA53 /* NextTrainsB2B.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextTrainsB2B.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F2D1362342ED820014BA53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22F2D1382342ED820014BA53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +91,7 @@
 		22F2D1352342ED820014BA53 /* NextTrainsB2B */ = {
 			isa = PBXGroup;
 			children = (
+				22AF129023436E1400B6E378 /* NextTrainsB2B.entitlements */,
 				2279CEF22342F9E300A58065 /* Data */,
 				2279CEF02342F95400A58065 /* GoogleService-Info.plist */,
 				22F2D1362342ED820014BA53 /* AppDelegate.swift */,
@@ -377,17 +379,20 @@
 			baseConfigurationReference = C0EC39353E5B1D016380CB78 /* Pods-NextTrainsB2B.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NextTrainsB2B/NextTrainsB2B.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NextTrainsB2B/Preview Content\"";
 				DEVELOPMENT_TEAM = N745X7KD5G;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NextTrainsB2B/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.SamWright.NextTrains;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -398,17 +403,20 @@
 			baseConfigurationReference = 9FA8CFA6F9251106E64E1BF0 /* Pods-NextTrainsB2B.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NextTrainsB2B/NextTrainsB2B.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NextTrainsB2B/Preview Content\"";
 				DEVELOPMENT_TEAM = N745X7KD5G;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NextTrainsB2B/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.SamWright.NextTrains;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

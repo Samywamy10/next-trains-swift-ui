@@ -14,16 +14,35 @@ import Firebase;
 struct ContentView: View {
     
     @EnvironmentObject var trainStations: TrainStations
+    @State var sortedByStations = true
+    @State var sortedByPlatforms = false
+    @State var sortedByTime = false
     
     var body: some View {
-        ScrollView {
-            ForEach(trainStations.stations) { trainStation in
-                VStack {
-                    TrainStationView(trainStation: trainStation)
-                    
+        VStack {
+            HeaderView(sortedByStations: $sortedByStations, sortedByPlatforms: $sortedByPlatforms, sortedByTime: $sortedByTime)
+            ScrollView {
+                if(sortedByStations) {
+                    ForEach(trainStations.departures.filter({ $0.stationName == "Southern Cross" }).prefix(3)) { departure in
+                        DepartureView(departure: departure)
+                    }
+                    ForEach(trainStations.departures.filter({ $0.stationName == "Richmond" }).prefix(3)) { departure in
+                        DepartureView(departure: departure)
+                    }
+                    ForEach(trainStations.departures.filter({ $0.stationName == "Parliament" }).prefix(3)) { departure in
+                        DepartureView(departure: departure)
+                    }
+                } else if(sortedByPlatforms) {
+                    ForEach(trainStations.departures.sorted(by: { $0.platform < $1.platform }).filter({$0.minutesTilDeparture <= 20})) { departure in
+                        DepartureView(departure: departure)
+                    }
+                } else {
+                    ForEach(trainStations.departures.sorted(by: { $0.minutesTilDeparture < $1.minutesTilDeparture }).filter({$0.minutesTilDeparture <= 20})) { departure in
+                        DepartureView(departure: departure)
+                    }
                 }
-                
             }
+            Spacer()
         }.onAppear(perform: self.loadData)
         //}
     }
@@ -40,39 +59,73 @@ struct ContentView: View {
     }
 }
 
-struct TrainStationView: View {
+struct HeaderView: View {
+    @Binding var sortedByStations: Bool
+    @Binding var sortedByPlatforms: Bool
+    @Binding var sortedByTime: Bool
     
-    var trainStation: TrainStation
+    func sortByStations() {
+        sortedByStations = true
+        sortedByPlatforms = false
+        sortedByTime = false
+    }
+    
+    func sortByPlatforms() {
+        sortedByStations = false
+        sortedByPlatforms = true
+        sortedByTime = false
+    }
+    
+    func sortByTime() {
+        sortedByStations = false
+        sortedByPlatforms = false
+        sortedByTime = true
+    }
     
     var body: some View {
-        Group {
-            if(trainStation.departures.count > 0) {
-                Text(trainStation.name).font(.title).foregroundColor(.blue)
-                VStack {
-                    HStack {
-                        Text("Platform \(trainStation.departures[0].platform)").padding(20)
-                        Text("\(trainStation.departures[0].minutesTilDeparture) minutes").padding(20)
-                    }.background(LinearGradient(gradient: Gradient(colors: [Color(red: 1.00, green: 0.51, blue: 0.00), Color(red: 1.00, green: 0.30, blue: 0.00)]), startPoint: .top, endPoint: .bottom))
-                        .foregroundColor(.white).padding(10)
-                    ForEach(trainStation.departures.suffix(from: 1)) { departure in
-                        HStack {
-                            Text("Platform \(departure.platform) in \(departure.minutesTilDeparture) minutes")
-                            Spacer()
-                        }.padding(10)
-                    }
-                }
-            }
-        }
+        VStack {
+            Text("NextTrains").font(.largeTitle)
+            HStack {
+                Button(action: sortByStations) {
+                    Text("Stations")
+                }.foregroundColor(.primary)
+                Spacer()
+                Button(action: sortByPlatforms) {
+                    Text("Platforms")
+                }.foregroundColor(.primary)
+                Spacer()
+                Button(action: sortByTime) {
+                    Text("Time")
+                }.foregroundColor(.primary)
+            }.padding()
+        }.padding()
+    }
+}
+
+struct DepartureView: View {
+    
+    var departure: Departure
+    
+    var body: some View {
+        HStack {
+            
+            Text(departure.stationName).padding()
+            Spacer()
+            VStack {
+                Text("Platform \(departure.platform)").font(.headline)
+                Text("\(departure.minutesTilDeparture)m")
+            }.padding()
+        }.background(departure.gradient)
+            .foregroundColor(.white)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let trainStations = TrainStations()
-        let departure1 = Departure(dateTime: Date(), platform: 6)
-        let departure2 = Departure(dateTime: Date(), platform: 7)
-        let parliament = TrainStation(name: "Parliament", departures: [departure1, departure2])
-        trainStations.stations = [parliament]
+        let departure1 = Departure(dateTime: Date(), platform: 6, stationName: "Flinders Street", gradient: LinearGradient(gradient: Gradient(colors: [Color(red: 1.00, green: 0.51, blue: 0.00), Color(red: 1.00, green: 0.30, blue: 0.00)]), startPoint: .top, endPoint: .bottom))
+        let departure2 = Departure(dateTime: Date(), platform: 7, stationName: "Flinders Street", gradient: LinearGradient(gradient: Gradient(colors: [Color(red: 1.00, green: 0.51, blue: 0.00), Color(red: 1.00, green: 0.30, blue: 0.00)]), startPoint: .top, endPoint: .bottom))
+        trainStations.departures = [departure1,departure2]
         return ContentView().environmentObject(trainStations)
     }
 }
