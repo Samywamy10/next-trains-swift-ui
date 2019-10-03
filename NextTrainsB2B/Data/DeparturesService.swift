@@ -10,8 +10,8 @@ import Foundation
 import Firebase
 import SwiftUI
 
-final class TrainStations: Identifiable {
-    var departures: [Departure] = []
+final class DeparturesService: ObservableObject, Identifiable {
+    @Published var departures: [Departure] = []
     
     func fetch() {
         self.departures = []

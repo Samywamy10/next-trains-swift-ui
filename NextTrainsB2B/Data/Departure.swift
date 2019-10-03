@@ -9,12 +9,12 @@
 import Foundation
 import SwiftUI
 
-final class Departure: Identifiable {
-    var dateTime: Date
-    var platform: Int
-    var minutesTilDeparture: Int
-    var stationName: String
-    var gradient: LinearGradient
+final class Departure: ObservableObject, Identifiable {
+    @Published var dateTime: Date
+    @Published var platform: Int
+    @Published var minutesTilDeparture: Int
+    @Published var stationName: String
+    @Published var gradient: LinearGradient
     
     init(dateTime: Date, platform: Int, stationName: String, gradient: LinearGradient) {
         self.dateTime = dateTime;
