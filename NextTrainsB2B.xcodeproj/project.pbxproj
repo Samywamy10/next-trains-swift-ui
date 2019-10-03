@@ -10,6 +10,8 @@
 		04CEF994381F09DC0F0495A9 /* Pods_NextTrainsB2B.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD145F6DCFD31873E92E4FC /* Pods_NextTrainsB2B.framework */; };
 		22134D26234603B800E1FCAD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22134D25234603B800E1FCAD /* HeaderView.swift */; };
 		22134D28234603D800E1FCAD /* DepartureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22134D27234603D800E1FCAD /* DepartureView.swift */; };
+		22134D2B2346069000E1FCAD /* DeparturesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22134D2A2346069000E1FCAD /* DeparturesService.swift */; };
+		22134D2D234606AE00E1FCAD /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22134D2C234606AE00E1FCAD /* Departure.swift */; };
 		2279CEF12342F95400A58065 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2279CEF02342F95400A58065 /* GoogleService-Info.plist */; };
 		22F2D1372342ED820014BA53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2D1362342ED820014BA53 /* AppDelegate.swift */; };
 		22F2D1392342ED820014BA53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2D1382342ED820014BA53 /* SceneDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		22134D25234603B800E1FCAD /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		22134D27234603D800E1FCAD /* DepartureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureView.swift; sourceTree = "<group>"; };
+		22134D2A2346069000E1FCAD /* DeparturesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeparturesService.swift; sourceTree = "<group>"; };
+		22134D2C234606AE00E1FCAD /* Departure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
 		2279CEF02342F95400A58065 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22AF129023436E1400B6E378 /* NextTrainsB2B.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NextTrainsB2B.entitlements; sourceTree = "<group>"; };
 		22F2D1332342ED820014BA53 /* NextTrainsB2B.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextTrainsB2B.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +62,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		22134D292346067400E1FCAD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				22134D2A2346069000E1FCAD /* DeparturesService.swift */,
+				22134D2C234606AE00E1FCAD /* Departure.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		22F2D12A2342ED820014BA53 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +92,7 @@
 		22F2D1352342ED820014BA53 /* NextTrainsB2B */ = {
 			isa = PBXGroup;
 			children = (
+				22134D292346067400E1FCAD /* Data */,
 				22AF129023436E1400B6E378 /* NextTrainsB2B.entitlements */,
 				2279CEF02342F95400A58065 /* GoogleService-Info.plist */,
 				22F2D1362342ED820014BA53 /* AppDelegate.swift */,
@@ -226,8 +240,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22134D2B2346069000E1FCAD /* DeparturesService.swift in Sources */,
 				22F2D1372342ED820014BA53 /* AppDelegate.swift in Sources */,
 				22F2D1392342ED820014BA53 /* SceneDelegate.swift in Sources */,
+				22134D2D234606AE00E1FCAD /* Departure.swift in Sources */,
 				22F2D13B2342ED820014BA53 /* ContentView.swift in Sources */,
 				22134D26234603B800E1FCAD /* HeaderView.swift in Sources */,
 				22134D28234603D800E1FCAD /* DepartureView.swift in Sources */,
