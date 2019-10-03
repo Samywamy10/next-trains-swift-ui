@@ -13,15 +13,32 @@ import Firebase;
 
 struct ContentView: View {
     @EnvironmentObject var departuresService: DeparturesService
-    var sortedBy: String = "stations"
+    @State var sortedBy: String = "stations"
     
     var body: some View {
         Group {
-            HeaderView(sortedBy: .constant(sortedBy))
+            HeaderView(sortedBy: $sortedBy)
             ScrollView {
-                ForEach(departuresService.departures) { departure in
-                    DepartureView(departure: departure)
-                }  
+                if(sortedBy == "stations") {
+                    ForEach(departuresService.departures.filter({ $0.stationName == "Southern Cross" }).prefix(3)) { departure in
+                        DepartureView(departure: departure)
+                    }
+                    ForEach(departuresService.departures.filter({ $0.stationName == "Richmond" }).prefix(3)) { departure in
+                        DepartureView(departure: departure)
+                    }
+                    ForEach(departuresService.departures.filter({ $0.stationName == "Parliament" }).prefix(3)) { departure in
+                        DepartureView(departure: departure)
+                    }
+                } else if(sortedBy == "platforms") {
+                    ForEach(departuresService.departures.sorted(by: { $0.platform < $1.platform }).filter({$0.minutesTilDeparture <= 20})) { departure in
+                        DepartureView(departure: departure)
+                    }
+                } else {
+                    ForEach(departuresService.departures.sorted(by: { $0.minutesTilDeparture < $1.minutesTilDeparture }).filter({$0.minutesTilDeparture <= 20})) { departure in
+                        DepartureView(departure: departure)
+                    }
+                }
+                
             }
         }.onAppear(perform: self.loadData)
     }
