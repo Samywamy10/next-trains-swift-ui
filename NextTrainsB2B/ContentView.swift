@@ -17,12 +17,23 @@ struct ContentView: View {
     var body: some View {
         Group {
             HeaderView()
-            ForEach(departuresService.departures) { departure in
-                DepartureView()
+            ScrollView {
+                ForEach(departuresService.departures) { departure in
+                    DepartureView()
+                }  
             }
-        }
+        }.onAppear(perform: self.loadData)
     }
-
+    
+    private func loadData() {
+        self.departuresService.fetch()
+        let url = URL(string: "https://asia-northeast1-nextplatform.cloudfunctions.net/nextFlindersStPlatforms")!
+        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+            guard data != nil else { return }
+            self.departuresService.fetch()
+        }
+        task.resume()
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
