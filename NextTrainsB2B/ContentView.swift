@@ -13,13 +13,14 @@ import Firebase;
 
 struct ContentView: View {
     @EnvironmentObject var departuresService: DeparturesService
+    var sortedBy: String = "stations"
     
     var body: some View {
         Group {
-            HeaderView()
+            HeaderView(sortedBy: .constant(sortedBy))
             ScrollView {
                 ForEach(departuresService.departures) { departure in
-                    DepartureView()
+                    DepartureView(departure: departure)
                 }  
             }
         }.onAppear(perform: self.loadData)

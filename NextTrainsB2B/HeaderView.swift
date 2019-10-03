@@ -9,19 +9,21 @@
 import SwiftUI
 
 struct HeaderView: View {
+    @Binding var sortedBy: String
+    
     var body: some View {
         VStack {
             Text("NextTrains").font(.largeTitle)
             HStack {
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                Button(action: {self.sortedBy = "stations"}) {
                     Text("Stations")
                 }.foregroundColor(.primary)
                 Spacer()
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                Button(action: {self.sortedBy = "platforms"}) {
                     Text("Platforms")
                 }.foregroundColor(.primary)
                 Spacer()
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                Button(action: {self.sortedBy = "time"}) {
                     Text("Time")
                 }.foregroundColor(.primary)
             }
@@ -31,6 +33,6 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView()
+        HeaderView(sortedBy: .constant("stations"))
     }
 }
