@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		04CEF994381F09DC0F0495A9 /* Pods_NextTrainsB2B.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD145F6DCFD31873E92E4FC /* Pods_NextTrainsB2B.framework */; };
+		22134D26234603B800E1FCAD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22134D25234603B800E1FCAD /* HeaderView.swift */; };
+		22134D28234603D800E1FCAD /* DepartureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22134D27234603D800E1FCAD /* DepartureView.swift */; };
 		2279CEF12342F95400A58065 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2279CEF02342F95400A58065 /* GoogleService-Info.plist */; };
 		22F2D1372342ED820014BA53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2D1362342ED820014BA53 /* AppDelegate.swift */; };
 		22F2D1392342ED820014BA53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2D1382342ED820014BA53 /* SceneDelegate.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22134D25234603B800E1FCAD /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		22134D27234603D800E1FCAD /* DepartureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureView.swift; sourceTree = "<group>"; };
 		2279CEF02342F95400A58065 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22AF129023436E1400B6E378 /* NextTrainsB2B.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NextTrainsB2B.entitlements; sourceTree = "<group>"; };
 		22F2D1332342ED820014BA53 /* NextTrainsB2B.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextTrainsB2B.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +88,8 @@
 				22F2D1412342ED830014BA53 /* LaunchScreen.storyboard */,
 				22F2D1442342ED830014BA53 /* Info.plist */,
 				22F2D13E2342ED830014BA53 /* Preview Content */,
+				22134D25234603B800E1FCAD /* HeaderView.swift */,
+				22134D27234603D800E1FCAD /* DepartureView.swift */,
 			);
 			path = NextTrainsB2B;
 			sourceTree = "<group>";
@@ -223,6 +229,8 @@
 				22F2D1372342ED820014BA53 /* AppDelegate.swift in Sources */,
 				22F2D1392342ED820014BA53 /* SceneDelegate.swift in Sources */,
 				22F2D13B2342ED820014BA53 /* ContentView.swift in Sources */,
+				22134D26234603B800E1FCAD /* HeaderView.swift in Sources */,
+				22134D28234603D800E1FCAD /* DepartureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
