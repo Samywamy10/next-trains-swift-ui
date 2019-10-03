@@ -9,20 +9,22 @@
 import SwiftUI
 
 struct DepartureView: View {
+    var departure: Departure
+    
     var body: some View {
         HStack {
-            Text("Southern Cross").padding()
+            Text(departure.stationName).padding()
             Spacer()
             VStack{
-                Text("Platform 10").font(.headline)
-                Text("10m")
+                Text("Platform \(departure.platform)").font(.headline)
+                Text("\(departure.minutesTilDeparture)m")
             }.padding()
-        }.background(Color.red).foregroundColor(.white)
+        }.background(departure.gradient).foregroundColor(.white)
     }
 }
 
 struct DepartureView_Previews: PreviewProvider {
     static var previews: some View {
-        DepartureView()
+        DepartureView(departure: Departure(dateTime: Date(), platform: 2, stationName: "Flinders Street", gradient: LinearGradient(gradient: Gradient(colors: [Color(red: 0.46, green: 0.73, blue: 0.94), Color(red: 0.278, green: 0.517, blue: 0.908)]), startPoint: .top, endPoint: .bottom)))
     }
 }
