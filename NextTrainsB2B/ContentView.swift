@@ -13,7 +13,8 @@ import Firebase;
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello world")
+        Group { Text("NextTrains").foregroundColor(.white).padding().font(.largeTitle)
+        }.background(Color.black)
     }
 }
 
