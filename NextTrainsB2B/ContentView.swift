@@ -12,14 +12,17 @@ import Firebase;
 
 
 struct ContentView: View {
+    @EnvironmentObject var departuresService: DeparturesService
+    
     var body: some View {
         Group {
             HeaderView()
-            DepartureView()
-            DepartureView()
+            ForEach(departuresService.departures) { departure in
+                DepartureView()
+            }
         }
-        
     }
+
 }
 
 struct ContentView_Previews: PreviewProvider {
